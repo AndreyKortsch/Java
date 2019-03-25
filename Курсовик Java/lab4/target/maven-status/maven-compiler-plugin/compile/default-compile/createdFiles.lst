@@ -1,0 +1,6 @@
+app\model\DAO.class
+app\servlets\ListServlet.class
+app\entities\Animal.class
+app\model\Model.class
+app\servlets\AddServlet.class
+app\entities\User.class
