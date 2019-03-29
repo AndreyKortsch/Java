@@ -73,6 +73,6 @@ public class Tovar {
     @Override
     public String toString(){
         String lineFormat = "%s %s %s %s %s %s %s %s";
-        return (String.format(lineFormat,ID,Name,Weith,Izmer,Country,Description,Price,Kart));
+        return (String.format(lineFormat,ID,Name,Weith,Izmer,Country,Description,Price,Numbers));
     }
 }

@@ -56,7 +56,7 @@ public class ZakazServlet extends HttpServlet {
             String pass = req.getParameter("name");
             System.out.println(pass);
             if (req.getParameter("option")!=null)
-            simpleBean.sendEmail(pass);
+            simpleBean.sendEmail(pass,addBookBean.getList());
             String pass1 = req.getParameter("number_voler");
             System.out.println(pass1);
             DAO dao=new DAO();

@@ -19,6 +19,12 @@
 <div class="w3-container w3-blue-grey w3-opacity w3-right-align">
     <h1>Мое приложение</h1>
 </div>
+<ul id="navbar">
+    <li><a href='/list'>Каталог</a></li>
+    <li><a href='/add'>Новости</a></li>
+    <li><a href="#">Контакты</a></li>
+    <li><a href="#">О нас</a></li>
+</ul>
 <div class="w3-container w3-orange w3-center">
     <h2>Категории</h2>
 </div>
@@ -48,6 +54,29 @@
     </div>
 
 <style>
+    #navbar {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        border: 2px solid #0066FF;
+        border-radius: 20px 5px;
+        width: 100%;
+        text-align: center;
+        background-color: #33ADFF;
+    }
+    #navbar li { display: inline; }
+    #navbar a {
+        color: #fff;
+        padding: 5px 10px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        width: 100px;
+    }
+    #navbar a:hover {
+        border-radius: 20px 5px;
+        background-color: #0066FF;
+    }
     #slideout {
         position: fixed;
         top: 40px;
@@ -65,7 +94,7 @@
     #slideout_inner {
         position: fixed;
         top: 40px;
-        left: -350px;
+        left: -500px;
         -webkit-transition-duration: 0.3s;
         -moz-transition-duration: 0.3s;
         -o-transition-duration: 0.3s;
@@ -77,7 +106,7 @@
     }
 
     #slideout:hover {
-        left: 250px;
+        left: 50px;
 
     }
 
@@ -89,18 +118,18 @@
         text-decoration: none; /* Отменяем подчеркивание у ссылки */
     }
     .fix {
-position: fixed;
-top: 100px;
-left: 30px;
-size: auto;
-padding: 0px;
-height: 500Px;
-border: 0px solid #000;
-opacity: 1;
-overflow-y: auto;
-overflow-x: auto;
-width: 250px;
-}
+    position: fixed;
+    top: 100px;
+    left: 30px;
+    size: auto;
+    padding: 0px;
+    height: 500Px;
+    border: 0px solid #000;
+    opacity: 1;
+    overflow-y: auto;
+    overflow-x: auto;
+    width: 250px;
+        }
 * {
     box-sizing: border-box;
 }
@@ -108,10 +137,15 @@ width: 250px;
 .col-3 {
     height: 30px;
     width: 33.333%; /* Можно задать любую другую ширину блока */
-    background: grey;
+    background: springgreen;
     margin: .5rem;
 }
+.col-3 a {
+        display: block; /* Ссылка как блочный элемент */
+        text-align: center; /* Выравнивание по центру */
+        height: 100%; /* Высота на весь слой */
 
+ }
 .row {
     display: flex;
     flex-flow: row nowrap;
@@ -130,9 +164,7 @@ width: 250px;
 
     <div class="fix">
         <div id="slideout">
-            <label>Корзина
-
-            </label>
+            <label>Корзина</label>
             <div id="slideout_inner">
     <div class="w3-card-2">
     <div class="w3-container w3-yellow">
@@ -165,6 +197,7 @@ width: 250px;
                             "</div>");
 
         }
+        else out.println("<div class=\"w3-hover-sand w3-center\">" +"Ваша корзина пуста" + "</div>");
     %>
     </div>
   </div>
@@ -188,7 +221,9 @@ width: 250px;
                             + + s.getPrice()+"</div>");
                     out.println( "<div class=\"w3-container w3-left-align\">" +
                             "<img src=\"../images/" +s.getKart() +"\" height=\"100\" width=\"100\" alt=\"none\">"
-                            + s.getName()+"</div>");
+                            + "<a class='href' href='/about?INFO1.java="+
+                             s.getID() + "'" +
+                            ") >"+s.getName()+"</a></div>");
                     //request.setAttribute("s",s.toString());
                     out.println("<div class=\"w3-container w3-light-green w3-right-align w3-padding\">");
                     out.println(
