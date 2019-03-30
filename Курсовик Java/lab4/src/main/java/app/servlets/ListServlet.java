@@ -56,7 +56,7 @@ public class ListServlet extends HttpServlet {
             int id=parsetoint(pass);
             String pass1 = req.getParameter("mynumber");
             int id1=parsetoint(pass1);
-            System.out.println(pass);
+            //System.out.println(pass);
             System.out.println(pass1);
 
             //Animal a=(Animal) req.getAttribute("s");

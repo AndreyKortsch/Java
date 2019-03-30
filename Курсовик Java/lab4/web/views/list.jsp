@@ -19,6 +19,15 @@
 <div class="w3-container w3-blue-grey w3-opacity w3-right-align">
     <h1>Мое приложение</h1>
 </div>
+<script type="text/javascript">
+    function change(objName, min, max, step) {
+        var obj = document.getElementById(objName);
+        var tmp = +obj.value + step;
+        if (tmp<min) tmp=min;
+        if (tmp>max) tmp=max;
+        obj.value = tmp;
+    }
+</script>
 <ul id="navbar">
     <li><a href='/list'>Каталог</a></li>
     <li><a href='/add'>Новости</a></li>
@@ -87,7 +96,7 @@
         -o-transition-duration: 0.3s;
         transition-duration: 0.3s;
         overflow-x: auto;
-        width: 250px;
+        width: 70px;
 
     }
 
@@ -128,7 +137,7 @@
     opacity: 1;
     overflow-y: auto;
     overflow-x: auto;
-    width: 250px;
+    width: 70px;
         }
 * {
     box-sizing: border-box;
@@ -146,19 +155,22 @@
         height: 100%; /* Высота на весь слой */
 
  }
-.row {
+
+    .row {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     align-content: center;
     justify-content: space-between;
 }
-</style>
-<style>
     INPUT[type="number"] {
         background-color: navy;
         color: #ffe;
+
     }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;
+        margin:0;}
 </style>
 
 
@@ -178,14 +190,16 @@
             for (Tovar a : as) {
 
                 out.println("<div class=\"w3-hover-sand\">" );
-                out.println( "<div class=\"w3-container w3-right-align\">" + a.getPrice()*a.getNumbers()+"</div>");
                 out.println( "<div class=\"w3-container w3-left-align\">" + a.getName()+"</div>");
                 out.println( "<div class=\"w3-container w3-right-align\">" + "Количество:"+a.getNumbers()+"</div>");
+                out.println( "<div class=\"w3-container w3-right-align\">" + "Цена:"+a.getPrice()*a.getNumbers()+"</div>");
                 out.println(
                         "<div class=\"w3-right-align\"><form method=\"post\"> " +
                                 "<button class=\"w3-btn w3-blue w3-round-large right-align \" type=\"submit\" name=\"button4\"" +
                                 " value="+i+">Удалить"+
-                                "</button></form></div></div>");
+                                "</button></form></div>");
+
+                out.println("</div>");
                 i++;
             }
             out.println(
@@ -217,29 +231,29 @@
                 int i=0;
                 for (Tovar s : names) {
                     out.println("<li class=\"w3-container w3-light-green\">");
+                    out.println( "<a class=\"\" href='/about?INFO1.java="+
+                            s.getID() + "'>" );
                     out.println( "<div class=\"w3-container w3-right-align\">"
-                            + + s.getPrice()+"</div>");
+                            + s.getPrice()+"</div>");
                     out.println( "<div class=\"w3-container w3-left-align\">" +
                             "<img src=\"../images/" +s.getKart() +"\" height=\"100\" width=\"100\" alt=\"none\">"
-                            + "<a class='href' href='/about?INFO1.java="+
-                             s.getID() + "'" +
-                            ") >"+s.getName()+"</a></div>");
+                            +"  "+s.getName()+"</div>");
                     //request.setAttribute("s",s.toString());
+                    out.println( "</a>");
                     out.println("<div class=\"w3-container w3-light-green w3-right-align w3-padding\">");
-                    out.println(
-                            "<form method=\"post\"> " +
-                                    "<button class=\"w3-btn w3-yellow w3-round-large right-align \" type=\"submit\" name=\"button2\"" +
-                            " value=\"25\">-"+
+                    out.println("<form method=\"post\">"+
+                            "<button class=\"w3-btn w3-yellow w3-round-large right-align \" type=\"button\" onClick=\"change('mynumber',1,10, -1);\" name=\"button2\"" +
+                            " value=\"-\">-"+
                             "</button>"+
                                     "<input type=\"hidden\" name=\"name1\" value="+i+">"+
-                            "<input type=\"number\" name=\"mynumber\" min=\"1\" step=\"1\" value=\"1\">"+
-                            "<button class=\"w3-btn w3-yellow w3-round-large right-align \" type=\"submit\" name=\"button3\"" +
-                             " value=\"0\">+"+ "</button>"
+                            "<input type=\"number\" name=\"mynumber\"id=\""+i+"\" min=\"1\" step=\"1\" value=\"1\">"+
+                            "<button class=\"w3-btn w3-yellow w3-round-large right-align \" type=\"button\" onClick=\"change("+i+",1,10,1);\" name=\"button3\"" +
+                             " value=\"+\">+"+ "</button>"
                     );
                     out.println(
                     "<button class=\"w3-btn w3-red w3-round-large right-align \" type=\"submit\" name=\"button1\"" +
                             " value="+s.toString()+">Добавить в корзину"+
-                    "</button></form></div> </li>");
+                    "</button></form> </div></li>");
                     i++;
                 }
                 out.println("</ul>");
