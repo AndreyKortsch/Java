@@ -35,14 +35,20 @@ public class OkServlet extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("result", singletonBean.message());
+        //req.setAttribute("result", singletonBean.message());
+        resp.setContentType("charset=UTF-8");
+        req.setCharacterEncoding("UTF-8");
         addBookBean.clear();
+        req.setAttribute("Clients", addBookBean.getClient());
+        System.out.println(addBookBean.getClient().getRole());
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/ok.jsp");
         requestDispatcher.forward(req, resp);
 
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        resp.setContentType("charset=UTF-8");
+        req.setCharacterEncoding("UTF-8");
         if (req.getParameter("button5") != null){
             System.out.println("ewr");
             //RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/ok.jsp");

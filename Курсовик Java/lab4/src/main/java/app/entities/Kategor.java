@@ -9,7 +9,19 @@ public class Kategor {
     {
         return ID;
     }
-
+    public void setID(int ID)
+    {
+        this.ID=ID;
+    }
+    private int TovarID;
+    public int getTovarID()
+    {
+        return TovarID;
+    }
+    public void setTovarID(int ID)
+    {
+        this.TovarID=ID;
+    }
     private String Name;
     public String getName()
     {
@@ -20,8 +32,17 @@ public class Kategor {
         this.ID=ID;
 
     }
+    private Tovar Tovars;
+    public Tovar getTovar()
+    {
+        return Tovars;
+    }
    // public List<Animal> AnimalList;
-
+public Kategor (int id, int a)
+{
+    ID=id;
+    TovarID=a;
+}
     @Override
     public String toString(){
         String lineFormat = "%s";

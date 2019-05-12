@@ -5,7 +5,7 @@
          version="4.0">
     <!-- add servlet -->
     <welcome-file-list>
-        <welcome-file>list</welcome-file>
+        <welcome-file>athorization</welcome-file>
     </welcome-file-list>
     <servlet>
         <servlet-name>add</servlet-name>
@@ -14,6 +14,14 @@
     <servlet-mapping>
         <servlet-name>add</servlet-name>
         <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>active</servlet-name>
+        <servlet-class>app.servlets.ActiveServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>active</servlet-name>
+        <url-pattern>/active</url-pattern>
     </servlet-mapping>
     <!-- list servlet -->
     <servlet>
@@ -37,7 +45,14 @@
         <servlet-name>zakaz</servlet-name>
         <servlet-class>app.servlets.ZakazServlet</servlet-class>
     </servlet>
-
+    <servlet>
+        <servlet-name>edit</servlet-name>
+        <servlet-class>app.servlets.EditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>edit</servlet-name>
+        <url-pattern>/edit</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>zakaz</servlet-name>
         <url-pattern>/zakaz</url-pattern>
@@ -50,6 +65,70 @@
     <servlet-mapping>
         <servlet-name>ok</servlet-name>
         <url-pattern>/ok</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>sborka</servlet-name>
+        <servlet-class>app.servlets.SborkaServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>sborka</servlet-name>
+        <url-pattern>/sborka</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>sborkazakaz</servlet-name>
+        <servlet-class>app.servlets.SborkaZakazServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>sborkazakaz</servlet-name>
+        <url-pattern>/sborkazakaz</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>bidacha</servlet-name>
+        <servlet-class>app.servlets.BidachaServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>bidacha</servlet-name>
+        <url-pattern>/bidacha</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>lischniykabinet</servlet-name>
+        <servlet-class>app.servlets.LischniyKabinet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>lischniykabinet</servlet-name>
+        <url-pattern>/lischniykabinet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>athorization</servlet-name>
+        <servlet-class>app.servlets.AthorizationServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>athorization</servlet-name>
+        <url-pattern>/athorization</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>zakazpostavshik</servlet-name>
+        <servlet-class>app.servlets.ZakazPostavshikServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>zakazpostavshik</servlet-name>
+        <url-pattern>/zakazpostavshik</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>dvischenie</servlet-name>
+        <servlet-class>app.servlets.DvischenieServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>dvischenie</servlet-name>
+        <url-pattern>/dvischenie</url-pattern>
     </servlet-mapping>
     <resource-ref>
         <description>DB Connection</description>

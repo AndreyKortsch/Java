@@ -22,10 +22,10 @@ public int numbers()
 }
 
     @Override
-public String message()
+public String message(int b)
 {
         a++;
-        return "Ваш заказ №"+String.valueOf(a)+" успешно оформлен. Ожидайте звонка в течение 20 минут";
+        return "Ваш заказ №"+b+" успешно оформлен. Ожидайте звонка в течение 20 минут";
 }
 
 }

@@ -8,13 +8,15 @@
 <%@ page import="java.util.List" %>
 <%@ page import="app.entities.Kategor" %>
 <%@ page import="app.entities.Tovar" %>
+<%@ page import="app.entities.AutorizationClient" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Список_животных</title>
+    <title>Каталог</title>
     <link rel="stylesheet" href="styles/w3.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <meta http-equiv="content-type" content="text/html"; charset="UTF-8">
 </head>
-
 <body class="w3-light-grey">
 <div class="w3-container w3-blue-grey w3-opacity w3-right-align">
     <h1>Мое приложение</h1>
@@ -26,13 +28,31 @@
         if (tmp<min) tmp=min;
         if (tmp>max) tmp=max;
         obj.value = tmp;
-    }
+        }
 </script>
+<%
+    AutorizationClient clients = (AutorizationClient) request.getAttribute("Clients");
+%>
 <ul id="navbar">
     <li><a href='/list'>Каталог</a></li>
-    <li><a href='/add'>Новости</a></li>
-    <li><a href="#">Контакты</a></li>
-    <li><a href="#">О нас</a></li>
+    <% if (clients.getRole().equals("завсклада"))
+        out.println(
+    "<li><a href='/edit'>Настройки</a></li>"+
+    "<li><a href='/dvischenie'>Приход/расход</a></li>"+
+            "<li><a href='/bidacha'>Выдача</a></li>");%>
+    <% if (clients.getRole().equals("кладовщик"))
+        out.println(
+    "<li><a href='/zakazpostavshik'>Заказать товар</a></li>"+
+            "<li><a href='/sborkazakaz'>Комплектовка</a></li>"  );%>
+    <% if (clients.getRole().equals("менеджер"))
+        out.println(
+    "<li><a href='/active'>Заказы</a></li>");%>
+    <% if (clients.getRole().equals("грузчик"))
+        out.println(
+    "<li><a href='/sborka?INFO=0'>Сборка</a></li>");%>
+    <% if (clients.getRole().equals("авторизированный пользователь"))
+           out.println("<li><a href=\"/lischniykabinet\">Личный кабинет</a></li>");%>
+
 </ul>
 <div class="w3-container w3-orange w3-center">
     <h2>Категории</h2>
@@ -52,7 +72,7 @@
 
                     out.println("<div class=\"col-3 w3-center\"> " +
                             "<a class='href' href='/list?INFO.java=" + s2.getID() + "'" +
-                                        ") >" +s2.toString() + "</a></div>");
+                                        " >" +s2.toString() + "</a></div>");
                         if (is %3==0) out.println("</div>");
                     is++;}
                 }
@@ -61,8 +81,23 @@
             </ul>
         </nav>
     </div>
-
+<div class="w3-container w3-right-align w3-green">
+    </br>
+    <div class="w3-left-align w3-green">
+        <form method="get" accept-charset="UTF-8">
+            <label>Введите название товара для поиска</label>
+            <div class="w3-left-align w3-green">
+                <% String awe= (String) request.getAttribute("text");%>
+                <input type="text" name="mytext" class="w3-border w3-round-large"
+                       <%out.println(" value=\""+awe+"\"");%> style="width: 30%" size="20" />
+                <button class="w3-btn w3-blue w3-round-large"  type="submit" id="button3" name="button3"
+                        >Найти</button>
+                </div></form>
+        <p></p>
+    </div>
+</div>
 <style>
+    #elem {display:none;}
     #navbar {
         margin: 0;
         padding: 0;
@@ -80,7 +115,7 @@
         text-decoration: none;
         font-weight: bold;
         display: inline-block;
-        width: 100px;
+        width: 140px;
     }
     #navbar a:hover {
         border-radius: 20px 5px;
@@ -90,7 +125,7 @@
         position: fixed;
         top: 40px;
         left: 0;
-        height: 500Px;
+        height: 50Px;
         -webkit-transition-duration: 0.3s;
         -moz-transition-duration: 0.3s;
         -o-transition-duration: 0.3s;
@@ -166,14 +201,20 @@
     INPUT[type="number"] {
         background-color: navy;
         color: #ffe;
-
+        width: 200px;
     }
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;
         margin:0;}
+    INPUT[type="text"] {
+        background-color: navy;
+        color: #ffe;
+        width: 200px;
+    }
+    input[type=text]::-webkit-inner-spin-button,
+    input[type=text]::-webkit-outer-spin-button {-webkit-appearance: none;
+        margin:0;}
 </style>
-
-
     <div class="fix">
         <div id="slideout">
             <label>Корзина</label>
@@ -220,40 +261,60 @@
 </div>
 <div class="w3-container w3-center w3-margin-bottom w3-padding">
     <div class="w3-card-4">
+        <% if (request.getAttribute("name") != null) {
+            out.println("<div class=\"w3-container w3-center w3-green\" id = \"elem\" > Товар успешно добавлен в корзину</div >"+
+                    "<script type = \"text/javascript\" >"+
+                    "$(\"#elem\").show('slow');"+
+                    "setTimeout(function() {"+
+                    "$(\"#elem\").hide('slow');"+
+                    "},2000);"+
+                    "</script>");
+        }
+        %>
         <div class="w3-container w3-orange">
             <h2>Товары</h2>
+
         </div>
         <%
+            Integer sd=(Integer) request.getAttribute("номер");
+            Integer sd2=(Integer) request.getAttribute("номер2");
            List<Tovar> names = (List<Tovar>) request.getAttribute("Animals");
            List<Integer> id=(List<Integer>) request.getAttribute("list");
            if (names != null && !names.isEmpty()) {
                 out.println("<ul class=\"w3-ul\">");
                 int i=0;
-                for (Tovar s : names) {
+                for (int i2=sd;i2<sd2;i2++) {
                     out.println("<li class=\"w3-container w3-light-green\">");
                     out.println( "<a class=\"\" href='/about?INFO1.java="+
-                            s.getID() + "'>" );
+                            names.get(i2).getID() +"&d=0"+ "'>" );
                     out.println( "<div class=\"w3-container w3-right-align\">"
-                            + s.getPrice()+"</div>");
+                            + names.get(i2).getPrice()+"</div>");
                     out.println( "<div class=\"w3-container w3-left-align\">" +
-                            "<img src=\"../images/" +s.getKart() +"\" height=\"100\" width=\"100\" alt=\"none\">"
-                            +"  "+s.getName()+"</div>");
-                    //request.setAttribute("s",s.toString());
+                            "<img src=\"../images/" +names.get(i2).getKart() +"\" height=\"100\" width=\"100\" alt=\"none\">"
+                            +"  "+names.get(i2).getName()+"</div>");
                     out.println( "</a>");
-                    out.println("<div class=\"w3-container w3-light-green w3-right-align w3-padding\">");
-                    out.println("<form method=\"post\">"+
-                            "<button class=\"w3-btn w3-yellow w3-round-large right-align \" type=\"button\" onClick=\"change('mynumber',1,10, -1);\" name=\"button2\"" +
-                            " value=\"-\">-"+
-                            "</button>"+
-                                    "<input type=\"hidden\" name=\"name1\" value="+i+">"+
-                            "<input type=\"number\" name=\"mynumber\"id=\""+i+"\" min=\"1\" step=\"1\" value=\"1\">"+
-                            "<button class=\"w3-btn w3-yellow w3-round-large right-align \" type=\"button\" onClick=\"change("+i+",1,10,1);\" name=\"button3\"" +
-                             " value=\"+\">+"+ "</button>"
-                    );
-                    out.println(
-                    "<button class=\"w3-btn w3-red w3-round-large right-align \" type=\"submit\" name=\"button1\"" +
-                            " value="+s.toString()+">Добавить в корзину"+
-                    "</button></form> </div></li>");
+                    if (names.get(i2).getNumbers()>names.get(i2).getNumbers2()) {
+                        out.println("<div class=\"w3-container w3-light-green w3-right-align w3-padding\">");
+                        out.println("<form method=\"post\">" +
+                                "<button class=\"w3-btn w3-yellow w3-round-large right-align \" type=\"button\" onClick=\"change(" + i + ",1,"+(names.get(i2).getNumbers()-names.get(i2).getNumbers2())+", -1);\" name=\"button2\"" +
+                                " value=\"-\">-" +
+                                "</button>" +
+                                "<input type=\"hidden\" name=\"name1\" value=" + i + ">" +
+                                "<input type=\"number\" name=\"mynumber\"id=\"" + i + "\" min=\"1\" step=\"1\" max="+(names.get(i2).getNumbers()-names.get(i2).getNumbers2())+" value=\"1\">" +
+                                "<button class=\"w3-btn w3-yellow w3-round-large right-align \" type=\"button\" onClick=\"change(" + i + ",1,"+(names.get(i2).getNumbers()-names.get(i2).getNumbers2())+",1);\" name=\"button3\"" +
+                                " value=\"+\">+" + "</button>"
+                        );
+                        out.println(
+                                "<button class=\"w3-btn w3-red w3-round-large right-align  type=\"submit\" id=\"button1\" name=\"button1\" " +
+                                        "value=" + names.get(i2).toString() + ">Добавить в корзину" +
+                                        "</button></form> </div>");
+                    }
+                    else
+                    {
+                        out.println("<div class=\"w3-container w3-light-green w3-right-align w3-padding\">");
+                        out.println("<label>Нет в наличии</label></div>");
+                    }
+                    out.println("</li>");
                     i++;
                 }
                 out.println("</ul>");
@@ -268,7 +329,17 @@
         %>
     </div>
 </div>
+<%
+    out.println("<div class=\"w3-container w3-center w3-yellow\"><br>");
+    out.println("<form method=\"get\">");
 
+    for (int i=0;i<(names.size() / 3)+1;i++)
+            out.println(
+            "<button class=\"w3-btn w3-red w3-round-large right-align  type=\"submit\" id=\"button1\" name=\"button38\" " +
+                    "onclick=\'this.form.submit\' value=" + i + ">"+(i+1)+"" +
+                    "</button> ");
+    out.print("</form></div>");
+%>
 <div class="w3-container w3-grey w3-opacity w3-right-align w3-padding">
     <button class="w3-btn w3-round-large" onclick="location.href='/'">Назад</button>
 </div>

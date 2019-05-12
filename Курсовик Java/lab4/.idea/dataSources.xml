@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="sklad@localhost" uuid="a42b6522-d4e2-4d8f-8e1e-b7d439f97623">
+    <data-source source="LOCAL" name="sklad@localhost" uuid="75c814f8-42e0-4cf2-a07a-95245bff71c3">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
@@ -15,7 +15,7 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="sklad@localhost [2]" uuid="9fbf51c3-4b23-4613-83d4-b735ca813414">
+    <data-source source="LOCAL" name="sklad@localhost [2]" uuid="0e5f5d87-35dc-4b77-b229-b729854a4c2f">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>

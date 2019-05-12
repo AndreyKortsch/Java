@@ -2,14 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd2f631b-d845-42ac-a2d8-41381ed1566e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lab4/src/main/java/app/model/DAO2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab4/src/main/java/app/servlets/OkServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab4/src/main/java/app/servlets/ZakazServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab4/web/views/ok.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab4/web/views/zakaz.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Новая папка/Диаграмма классов6.vsdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Новая папка/Диаграмма прецендентов2.vsdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Новая папка/Разработка прототипа ПС складского учета2.pptx" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/src/main/java/app/entities/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/src/main/java/app/servlets/ActiveServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/src/main/java/app/servlets/EditServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/src/main/java/app/servlets/SborkaServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/web/views/active.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/web/views/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/web/views/sborka.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Курсовик Java2 — копия/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Курсовик Java2 — копия/lab4/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Курсовик Java2 — копия/lab4/lab4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Курсовик Java2 — копия/lab4/src/main/java/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/.idea/lab4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/.idea/lab4.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/app/entities/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/app/entities/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/app/entities/Tovar.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/app/entities/Tovar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/app/entities/Zakaz.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/app/entities/Zakaz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/app/model/DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/app/model/DAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/app/servlets/ListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/app/servlets/ListServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/app/servlets/ZakazServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/app/servlets/ZakazServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/ejb/classes/AddBookBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/ejb/classes/AddBookBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/ejb/classes/SimpleBean$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/ejb/classes/SimpleBean$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/ejb/classes/SimpleBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/ejb/classes/SimpleBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/ejb/interfaces/SimpleBeanRemote.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/ejb/interfaces/SimpleBeanRemote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/ejb/interfaces/addBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/classes/ejb/interfaces/addBook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/views/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/views/zakaz.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/out/artifacts/lab4_war_exploded/views/zakaz.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/src/main/java/app/entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/src/main/java/app/entities/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/src/main/java/app/entities/Tovar.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/src/main/java/app/entities/Tovar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/src/main/java/app/entities/Zakaz.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/src/main/java/app/entities/Zakaz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/src/main/java/app/model/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/src/main/java/app/model/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/src/main/java/app/servlets/AboutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/src/main/java/app/servlets/AboutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/src/main/java/app/servlets/ListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/src/main/java/app/servlets/ListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/src/main/java/app/servlets/ZakazServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/src/main/java/app/servlets/ZakazServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/src/main/java/ejb/classes/AddBookBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/src/main/java/ejb/classes/AddBookBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/src/main/java/ejb/classes/SimpleBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/src/main/java/ejb/classes/SimpleBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/src/main/java/ejb/interfaces/SimpleBeanRemote.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/src/main/java/ejb/interfaces/SimpleBeanRemote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/src/main/java/ejb/interfaces/addBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/src/main/java/ejb/interfaces/addBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/target/classes/META-INF/lab4.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/target/classes/app/entities/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/target/classes/app/entities/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/target/classes/app/entities/Tovar.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/target/classes/app/entities/Tovar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/target/classes/app/entities/Zakaz.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/target/classes/app/entities/Zakaz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/target/classes/app/model/DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/target/classes/app/model/DAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/target/classes/app/servlets/ListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/target/classes/app/servlets/ListServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/target/classes/app/servlets/ZakazServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/target/classes/app/servlets/ZakazServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/target/classes/ejb/classes/AddBookBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/target/classes/ejb/classes/AddBookBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/target/classes/ejb/classes/SimpleBean$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/target/classes/ejb/classes/SimpleBean$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/target/classes/ejb/classes/SimpleBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/target/classes/ejb/classes/SimpleBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/target/classes/ejb/interfaces/SimpleBeanRemote.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/target/classes/ejb/interfaces/SimpleBeanRemote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/target/classes/ejb/interfaces/addBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/target/classes/ejb/interfaces/addBook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/web/views/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/web/views/about.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/web/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/web/views/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/web/views/zakaz.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/web/views/zakaz.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +85,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -50,15 +99,19 @@
               <item name="Курсовик Java" type="462c0819:PsiDirectoryNode" />
               <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Курсовик Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Курсовик Java" type="462c0819:PsiDirectoryNode" />
+              <item name="lab4" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lab4" />
@@ -89,27 +142,26 @@
       <option name="presentableId" value="Default" />
       <updated>1553088294240</updated>
       <workItem from="1553088304222" duration="58000" />
+      <workItem from="1554881741064" duration="92000" />
+      <workItem from="1555096686061" duration="43000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58000" />
+    <option name="totallyTimeSpent" value="193000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24963397" />
+      <window_info id="Web" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -117,15 +169,20 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">

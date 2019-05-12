@@ -9,6 +9,10 @@ public class Tovar {
     {
         return ID;
     }
+    public void setID(int id)
+    {
+       this.ID=id;
+    }
     private String Name;
     public void setName(String a)
     {
@@ -48,6 +52,11 @@ public class Tovar {
     {
         return Kart;
     }
+    private int ZakazID;
+    public int getZakazID()
+    {
+        return ZakazID;
+    }
     private int Numbers;
     public void setNumbers(int a)
     {
@@ -56,6 +65,48 @@ public class Tovar {
     public int getNumbers()
     {
         return Numbers;
+    }
+    private int Numbers2;
+    public void setNumbers2(int a)
+    {
+        this.Numbers2=a;
+    }
+    public int getNumbers2()
+    {
+        return Numbers2;
+    }
+    private List<Postavshik> ListPostavshik;
+    public void setListPostavshik(List<Postavshik> a)
+    {
+        this.ListPostavshik=a;
+    }
+    private Location location;
+    public Location getLocation()
+    {
+        return location;
+    }
+    public void setLocation(Location a)
+    {
+        this.location=a;
+    }
+    private List<Location> listlocation;
+    public List<Location> getListLocation()
+    {
+        return listlocation;
+    }
+    public void setListLocation(List<Location> a)
+    {
+        this.listlocation=a;
+    }
+    public List<Postavshik> getListPostavshik()
+    {
+        return ListPostavshik;
+    }
+    public Tovar(int ID, String Name, int Numbers){
+        this.ID=ID;
+        this.Name=Name;
+        this.Numbers=Numbers;
+
     }
     public Tovar(int ID, String Name, float Weith, String Izmer, String Country, String Description
             , float Price, String Kart){
@@ -68,8 +119,33 @@ public class Tovar {
         this.Price=Price;
         this.Kart=Kart;
     }
-
-
+    public Tovar(int ID, int ZakazID, String Name,
+            float Price,int Numbers ){
+        this.ID=ID;
+        this.ZakazID=ZakazID;
+        this.Name=Name;
+        this.Price=Price;
+        this.Numbers=Numbers;
+    }
+    public Tovar(int ID, int Numbers ){
+        this.ID=ID;
+        this.Numbers=Numbers;
+    }
+    public Tovar(int ZakazID, String Name,
+                 float Price,int Numbers ){
+        this.ZakazID=ZakazID;
+        this.Name=Name;
+        this.Price=Price;
+        this.Numbers=Numbers;
+    }
+    public Tovar(int ID,String Kart, String Name,
+                 float Price,int Numbers ){
+        this.ID=ID;
+        this.Kart=Kart;
+        this.Name=Name;
+        this.Price=Price;
+        this.Numbers=Numbers;
+    }
     @Override
     public String toString(){
         String lineFormat = "%s %s %s %s %s %s %s %s";

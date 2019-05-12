@@ -7,16 +7,7 @@ public class Client {
         return ID;
     }
 
-    private String Login;
-    public String getLogin()
-    {
-        return Login;
-    }
-    private String Password;
-    public String getPassword()
-    {
-        return Password;
-    }
+
 
     private String Telefon;
     public String getTelefon()
@@ -30,10 +21,18 @@ public class Client {
     {
         return Email;
     }
-    public Client(int ID,String Telefon, String Password){
+
+    public  Client(){}
+    public Client(int ID,String Telefon, String Email){
         this.ID=ID;
         this.Telefon=Telefon;
-        this.Password=Password;
+        this.Email=Email;
+
+    }
+    public Client(String Telefon, String Email){
+        this.ID=ID;
+        this.Telefon=Telefon;
+        this.Email=Email;
 
     }
 }
