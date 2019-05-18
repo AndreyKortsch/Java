@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="lab4:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/lab4_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="lab4" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.codehaus.mojo.archetypes:ejb-javaee6:1.5" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.38" />
+          <element id="library" level="project" name="Maven: com.sun.mail:smtp:1.5.4" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+          <element id="library" level="project" name="Maven: javax.mail:mail:1.4.5" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="lab4/web/Web" />
+      <element id="javaee-facet-resources" facet="lab4/web/Web2" />
+    </root>
+  </artifact>
+</component>
